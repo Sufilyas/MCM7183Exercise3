@@ -5,7 +5,7 @@ server = app.server
 
 #H1 is header for writing
 
-app.layout = html.H1('Hello World')
+app.layout = html.H1('Trulululu')
 
 if __name__ == '__main__':
     app.run(debug=True)
