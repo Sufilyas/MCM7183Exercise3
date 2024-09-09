@@ -37,7 +37,7 @@ app.layout = [html.H1('Trulululu'),
     Input('dropdown-country', 'value')
 )
 
-def update_graph(value):
+def update_graph(country_selected):
     subset_my = df[df['country'].isin(["Malaysia"])]
     fig = px.scatter(subset_my, x = "year", y = "gdp")
     return fig
