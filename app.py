@@ -22,7 +22,6 @@ subset_2020_Europe = subset_2020[subset_2020['state'].isin(["Europe"])]
 subset_2020_Oceania = subset_2020[subset_2020['state'].isin(["Oceania"])]
 pie_data = [sum(subset_2020_Asia['gdp']),sum(subset_2020_Africa['gdp']),sum(subset_2020_America['gdp']),sum(subset_2020_Europe['gdp']),sum(subset_2020_Oceania['gdp'])];
 mylabels = ["Asia","Africa","America","Europe","Oceania"]
-plt.pie(pie_data, labels = mylabels)
 pie_df = {'continent': mylabels,'gdp': pie_data}
 fig2 = px.pie(pie_df,values = "gdp", names = "continent")
 
