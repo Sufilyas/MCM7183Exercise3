@@ -12,7 +12,7 @@ server = app.server
 
 df = pd.read_csv("https://github.com/Sufilyas/MCM7183Exercise3/blob/main/assets/gdp_1960_2020.csv")
 subset_my = df[df['country'].isin(["Malaysia"])]
-fig = px.scatter(subset_my, x = "year", y = "GDP")
+fig = px.scatter(subset_my, x = "year", y = "gdp")
 
 subset_2020_Asia = subset_2020[subset_2020['state'].isin(["Asia"])]
 subset_2020_Africa = subset_2020[subset_2020['state'].isin(["Africa"])]
