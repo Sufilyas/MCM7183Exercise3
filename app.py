@@ -30,10 +30,9 @@ app.layout = [html.H1('Trulululu'),
 @callback(
     Output('graph-scatter','figure'),
     Output('graph-pie','figure'),
-    Input('dropdown-country', 'value')
+    Input('dropdown-country', 'value'),
     Input('year', 'value')
 )
-
 def update_graph(country_selected, year_selected):
     subset_country = df[df['country'].isin([country_selected])]
     fig = px.scatter(subset_country, x = "year", y = "gdp")
