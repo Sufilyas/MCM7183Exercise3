@@ -21,7 +21,10 @@ app.layout = [html.H1('Trulululu'),
               html.Img(src=image_path),
               dcc.Dropdown(['Malaysia', 'Indonesia', 'China'], 'Malaysia', id='dropdown-country'), 
               dcc.Graph(id="grahp-scatter"), 
-              dcc.Dropdown([{'label':'2020', 'value': 2020}, {'label':'2010', 'value': 2010}, {'label':'2000', 'value': 2000}], '2000', id='dropdown-year'), 
+              dcc.Dropdown([{'label':'2020', 'value': 2020}, 
+                            {'label':'2010', 'value': 2010}, 
+                            {'label':'2000', 'value': 2000}], 
+                            '2000', id='dropdown-year'), 
               dcc.Graph(id="graph-pie")]
 
 @callback(
@@ -32,8 +35,8 @@ app.layout = [html.H1('Trulululu'),
 )
 
 def update_graph(country_selected, year_selected):
-    subset_my = df[df['country'].isin([country_selected])]
-    fig = px.scatter(subset_my, x = "year", y = "gdp")
+    subset_country = df[df['country'].isin([country_selected])]
+    fig = px.scatter(subset_country, x = "year", y = "gdp")
 
     subset_year = df[df['year'].isin([year_selected])]
     subset_year_Asia = subset_year[subset_year['state'].isin(["Asia"])]
