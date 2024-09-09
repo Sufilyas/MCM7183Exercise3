@@ -30,4 +30,5 @@ image_path = 'assets/Tired_Happy.png'
 app.layout = [html.H1('Trulululu'), html.Img(src=image_path), dcc.Graph(figure=fig), dcc.Graph(figure=fig2)]
 
 if __name__ == '__main__':
+    #dah ok baru remove debug tu
     app.run(debug=True)
