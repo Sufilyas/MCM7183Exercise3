@@ -7,7 +7,7 @@ import plotly.express as px
 #app.title give the file a name otherwise they name defaultly
 
 app = Dash(__name__)
-app.title = "Exercise 3"
+app.title = "Herp Me"
 server = app.server
 
 df = pd.read_csv("https://raw.githubusercontent.com/Sufilyas/MCM7183Exercise3/main/assets/gdp_1960_2020.csv")
@@ -32,7 +32,7 @@ app.layout = [html.H1('Trulululu'),
     Output('graph-scatter','figure'),
     Output('graph-pie','figure'),
     Input('dropdown-country', 'value'),
-    Input('year', 'value')
+    Input('year', 'value'),
 )
 def update_graph(country_selected, year_selected):
     subset_country = df[df['country'].isin([country_selected])]
