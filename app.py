@@ -25,8 +25,9 @@ mylabels = ["Asia","Africa","America","Europe","Oceania"]
 pie_df = {'continent': mylabels,'gdp': pie_data}
 fig2 = px.pie(pie_df,values = "gdp", names = "continent")
 
+image_path = 'assets/Tired_Happy.png'
 
-app.layout = html.H1('Trulululu')
+app.layout = [html.H1('Trulululu'), html.Img(src=image_path), dcc.Graph(figure=fig), dcc.Graph(figure=fig2)]
 
 if __name__ == '__main__':
     app.run(debug=True)
