@@ -19,6 +19,7 @@ image_path = 'assets/Tired_Happy.png'
 
 app.layout = [html.H1('Trulululu'), 
               html.Img(src=image_path),
+              html.Div(id='debug'),
               dcc.Dropdown(['Malaysia', 'Indonesia', 'China'], 
                            'Malaysia', id='dropdown-country'), 
               dcc.Graph(id="grahp-scatter"), 
@@ -31,12 +32,13 @@ app.layout = [html.H1('Trulululu'),
 @callback(
     Output('graph-scatter','figure'),
     Output('graph-pie','figure'),
+    Output('debug','children'),
     Input('dropdown-country', 'value'),
     Input('year', 'value'),
 )
 def update_graph(country_selected, year_selected):
-    subset_country = df[df['country'].isin([country_selected])]
-    fig = px.scatter(subset_country, x = "year", y = "gdp")
+    subset_Country = df[df['country'].isin([country_selected])]
+    fig = px.scatter(subset_Country, x = "year", y = "gdp")
 
     subset_year = df[df['year'].isin([year_selected])]
     subset_year_Asia = subset_year[subset_year['state'].isin(["Asia"])]
@@ -50,10 +52,10 @@ def update_graph(country_selected, year_selected):
                 sum(subset_year_Europe['gdp']),
                 sum(subset_year_Oceania['gdp'])];
     mylabels = ["Asia","Africa","America","Europe","Oceania"]
-    pie_df = {'continent': mylabels,'gdp': pie_data}
-    fig2 = px.pie(pie_df,values = "gdp", names = "continent")
+    pie_df = {'Continent': mylabels,'GDP': pie_data}
+    fig2 = px.pie(pie_df,values = "GDP", names = "Continent")
 
-    return fig,fig2,subset_country.to_string()
+    return fig,fig2,subset_Country.to_string()
 
 if __name__ == '__main__':
     #dah ok baru remove debug tu
