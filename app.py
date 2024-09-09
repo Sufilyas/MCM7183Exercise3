@@ -49,7 +49,7 @@ def update_graph(country_selected, year_selected):
     pie_df = {'continent': mylabels,'gdp': pie_data}
     fig2 = px.pie(pie_df,values = "gdp", names = "continent")
 
-    return fig
+    return fig,fig2
 
 if __name__ == '__main__':
     #dah ok baru remove debug tu
