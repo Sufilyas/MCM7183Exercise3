@@ -10,10 +10,11 @@ app = Dash(__name__)
 app.title = "Exercise 3"
 server = app.server
 
-df = pd.read_csv("https://github.com/Sufilyas/MCM7183Exercise3/blob/main/assets/gdp_1960_2020.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/Sufilyas/MCM7183Exercise3/main/assets/gdp_1960_2020.csv")
 subset_my = df[df['country'].isin(["Malaysia"])]
 fig = px.scatter(subset_my, x = "year", y = "gdp")
 
+subset_2020 = df[df['year'].isin([2020])]
 subset_2020_Asia = subset_2020[subset_2020['state'].isin(["Asia"])]
 subset_2020_Africa = subset_2020[subset_2020['state'].isin(["Africa"])]
 subset_2020_America = subset_2020[subset_2020['state'].isin(["America"])]
