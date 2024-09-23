@@ -19,6 +19,8 @@ image_path = 'assets/Tired_Happy.png'
 
 app.layout = [html.H1('Trulululu'), 
               html.Img(src=image_path),
+              #to print tengok code working or not
+              html.Div(id='debug'),
               dcc.Dropdown(['Malaysia', 'Indonesia', 'China'], 
                            'Malaysia', id='dropdown-country'), 
               dcc.Graph(id="graph-scatter"), 
