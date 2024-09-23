@@ -32,6 +32,7 @@ app.layout = [html.H1('Trulululu'),
 @callback(
     Output('graph-scatter','figure'),
     Output('graph-pie','figure'),
+    Output('debug','children'),
     Input('dropdown-country', 'value'),
     Input('dropdown-year', 'value'),
 )
