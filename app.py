@@ -19,7 +19,7 @@ image_path = 'assets/Tired_Happy.png'
 
 app.layout = [html.H1('Trulululu'), 
               html.Img(src=image_path),
-              #html.Div(id='debug'),
+              html.Div(id='debug'),
               dcc.Dropdown(['Malaysia', 'Indonesia', 'China'], 
                            'Malaysia', id='dropdown-country'), 
               dcc.Graph(id="graph-scatter"), 
@@ -32,7 +32,7 @@ app.layout = [html.H1('Trulululu'),
 @callback(
     Output('graph-scatter','figure'),
     Output('graph-pie','figure'),
-    #Output('debug','children'),
+    Output('debug','children'),
     Input('dropdown-country', 'value'),
     Input('dropdown-year', 'value'),
 )
