@@ -32,7 +32,7 @@ app.layout = [html.H1('Trulululu'),
 @callback(
     Output('graph-scatter','figure'),
     Output('graph-pie','figure'),
-    Output('debug','children'),
+    #Output('debug','children'),
     Input('dropdown-country', 'value'),
     Input('dropdown-year', 'value'),
 )
@@ -58,7 +58,7 @@ def update_graph(country_selected, year_selected):
     pie_df = {'Continent': mylabels,'GDP': pie_data}
     fig2 = px.pie(pie_df,values = "GDP", names = "Continent")
 
-    return fig,fig2,subset_Country.to_string()
+    return fig,fig2
 
 if __name__ == '__main__':
     #dah ok baru remove debug tu
