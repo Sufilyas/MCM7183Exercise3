@@ -7,7 +7,7 @@ import plotly.express as px
 #app.title give the file a name otherwise they name defaultly
 
 app = Dash(__name__)
-app.title = "Herp Me"
+app.title = "Assignment 3 Sufina"
 server = app.server
 
 df = pd.read_csv("https://raw.githubusercontent.com/Sufilyas/MCM7183Exercise3/main/assets/gdp_1960_2020.csv")
@@ -15,9 +15,9 @@ df = pd.read_csv("https://raw.githubusercontent.com/Sufilyas/MCM7183Exercise3/ma
 
 
 
-image_path = 'assets/Tired_Happy.png'
+image_path = 'assets/Multimedia_University_logo.png'
 
-app.layout = [html.H1('Trulululu'), 
+app.layout = [html.H1('Assignment 3'), 
               html.Img(src=image_path),
               html.Div(id='debug'),
               dcc.Dropdown(['Malaysia', 'Indonesia', 'China'], 
